@@ -1,0 +1,27 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-dark p-0 pt-1 border-top">
+  <button aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"
+          class="navbar-toggler"
+          data-target="#navbarSupportedContent" data-toggle="collapse" type="button">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse bg-header" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto w-100 d-flex justify-content-evenly">
+      <li *ngFor="let cat of categories" class="nav-item">
+        <a (click)="setCategory(cat.id)"
+           [ngClass]="{'nav-link': true,
+           'pb-2': true,
+           'active': gamesService.categoryId === cat.id}"
+           href="#">{{cat.label}}</a>
+      </li>
+      <li class="nav-item">
+        <a (click)="setCategory('other')"
+           [ngClass]="{
+           'nav-link': true,
+           'pb-2': true,
+           'active': gamesService.categoryId === 'other'
+           }"
+           href="#">Other</a>
+      </li>
+    </ul>
+  </div>
+</nav>

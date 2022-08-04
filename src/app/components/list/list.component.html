@@ -1,0 +1,19 @@
+<div class="d-flex flex-column justify-content-between align-items-center my-5">
+  <div class="row container-sm container-md">
+    <div *ngFor="let game of gamesService.displayedGames"
+         class="col-12 col-sm-6 col-md-4 col-lg-3 d-flex flex-column justify-content-between align-items-center">
+      <div *ngIf="game" [style]="{background: 'url(\''+game.image+'\')'}"
+           class="card zoom m-1 position-relative mb-4">
+        <div class="card-body p-0">
+          <app-ribbon [categories]="game.categories"></app-ribbon>
+          <h5 *ngIf="game.jackpot" class="card-title card-top-radius m-0 p-2 fw-bold text-light text-center">
+            £{{game.jackpot}}</h5>
+          <!--this button won't show on screen under sm threshold-->
+          <div class="card-footer mx-3 mb-1 d-none"><a
+            class="btn d-sm-block d-none btn-play text-light align-self-center position-absolute w-75" href="#">Play</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

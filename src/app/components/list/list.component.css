@@ -1,0 +1,44 @@
+.btn-play {
+  background: #8DC63F;
+  border: #8DC63F;
+  bottom: 4px;
+}
+
+.card {
+  height: 165px;
+  width: 230px;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+  background-size: cover !important;
+  border-radius: 16px;
+}
+
+.card-title {
+  background: #00000061;
+  font-weight: bold;
+}
+
+.card-top-radius {
+  border-top-left-radius: 16px;
+  border-top-right-radius: 16px;
+}
+
+
+@media (min-width: 1200px) {
+  .container-md, .container-sm {
+    max-width: 1090px;
+  }
+}
+
+
+.zoom {
+  transition: transform .2s;
+}
+
+.zoom:hover {
+  transform: scale(1.09); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+}
+
+.zoom:hover .card-footer {
+  display: block !important;
+}
